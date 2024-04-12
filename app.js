@@ -31,13 +31,6 @@ function addButtons(){
 }
 
 function changeText(choice){
-    // console.log(id);
-    // if(id == 'choice1') {
-    //     document.getElementById('textbox').innerText = "you selected choice 1!";
-    // }
-    // else {
-    //     document.getElementById('textbox').innerText = "you (hopefully) selected choice 2! if not then shits bugged";
-    // }
     console.log(choice);
     document.getElementById('choices').innerHTML = '';
     document.getElementById('textbox').innerHTML = data[choice][0];
