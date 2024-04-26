@@ -1,0 +1,17 @@
+button {
+    font-size: 1.5em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+#textbox-div {
+    font-size: 1.25em;
+}
+
+
+#choices {
+    /* position: absolute; */
+    font-size: 2em;
+    text-align: center;
+    margin-top: 45vh;
+}

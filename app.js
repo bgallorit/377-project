@@ -20,6 +20,9 @@ let data = {
 
 let currentChoice;
 let snoozeCount = 0;
+let grade = 0;
+let social = 0;
+ 
 
 function init() {       //initial text and button creation, doesn't need to be dynamic
     document.getElementById('textbox').innerText = data.init[1];
@@ -55,5 +58,4 @@ function changeText(choice){
             
         }
     }
-
 }
