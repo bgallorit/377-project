@@ -55,7 +55,7 @@ function changeText(choice){
         document.getElementById('choices').append(button);
         button.onclick = function(){
             changeText(button.innerText);
-            
+            //comment
         }
     }
 }
