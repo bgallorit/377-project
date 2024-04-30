@@ -1,6 +1,6 @@
 let data = {
     'init': ['initid', 'You wake up to your alarm blaring. It is 8:30. You have to be in class in an hour.', 'Get up', 'Snooze'],
-    'Get up': ['wakeup', 'You lift yourself out of bed. You should probably take a shower. ', 'Take shower', 'Skip the shower'],
+    'Get up': ['wakeup', 'You lift yourself out of bed. You should probably take a shower. ', 'Take shower', 'Skip the shower', 'Secret third choice to test flexbox'],
     'Take shower': ['shower', 'After taking a shower, you make your way to class.'],
     'Skip the shower': ['noshower', "You decide it's probably fine to skip the shower... hopefully..."],
     'Snooze1': ['snooze1', 'You decide to give yourself just five more minutes of sleep. Those five minutes go by seeminly instantly, and your alarm goes off again.', 'Get up', 'Snooze'],
@@ -25,6 +25,7 @@ let social = 0;
  
 
 function init() {       //initial text and button creation, doesn't need to be dynamic
+    document.getElementById('choices').innerHTML = '';
     document.getElementById('textbox').innerText = data.init[1];
     let initButton1 = document.createElement('button');
     initButton1.innerText = "Get up";
@@ -40,7 +41,15 @@ function init() {       //initial text and button creation, doesn't need to be d
     document.getElementById('choices').append(initButton2);
 }
 
+
+//Takes the choice made and edits the buttons/text on screen to match the data
 function changeText(choice){
+    //wipe out current data
+    //edit textbox to be description
+    //create buttons for each new choice
+
+    //currently hard codes certain cases, could be made to take custom IDs
+
     console.log(choice);
     document.getElementById('choices').innerHTML = '';
     if(choice == 'Snooze'){
