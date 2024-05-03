@@ -30,7 +30,7 @@ let data = {
         'text': "You decide it's probably fine to skip the shower... probably. You make your way to your first class.\nAs you sit down, you notice other students moving their chairs a little bit. There are practice problems on the board.",
         'backgroundImage': 'classroom.jpg',
         'choices': [
-            {'text': 'Take a look at the problems', 'next': 'help1'}
+            {'text': 'Take a look at the problems', 'next': 'help1'} 
         ]
     },
     'Snooze1': {
@@ -144,6 +144,13 @@ let data = {
             { 'text': 'Ask a classmate', 'next': 'classmate' },
         ]
     },
+    'Professor help': {
+        'id': 'professor1',
+        'text': "The professor didn't seem to be doing much, so you asked him for help. He was glad to help you, and even stayed after class to let you ask him questions about the next assignment.\nBy the time you're done talking, it's almost time for your next class.",
+        'choices': [
+            { 'text': 'Next', 'next': 'nextClass1' },
+        ]
+    },
     'ChatGPT success': {
         'id': 'chatGpt0',
         'text': 'You use ChatGPT to help you solve the practice problems and nobody seems to notice. You feel like you have a better grasp of the material!',
@@ -158,6 +165,69 @@ let data = {
         'text': 'You use ChatGPT to help you solve the practice problems. Unfortunately, you fail to notice your professor patrolling the room and he catches you in the act. Even though you can tell he is very unhappy with you, he says nothing to you and class ends like normal.',
         'choices': [
             { 'text': 'Next', 'next': 'interrogation1' },
+        ]
+    },
+    'Next class 1': {
+        'id': 'nextClass1',
+        'text': "Once you arrived at your second class, the professor split everyone into groups and initiated group discussions. The professor isn't really paying attention, so you can do whatever you want.",
+        'choices': [
+            { 'text': 'Talk about class topic', 'next': 'topic1' },
+            { 'text': 'Talk about extracurriculars', 'next': 'extracurricular1' },
+            { 'text': 'Go on your phone', 'next': 'phone1' },
+        ]
+    },
+    'Topic 1': {
+        'id': 'topic1',
+        'text': "You chat with your group about the topic given by the professor. You learn your groupmates' opinions on the ethics of using technology in education. How interesting!",
+        'choices': [
+            { 'text': 'Next', 'next': 'askToHangOut' },
+        ]
+    },
+    'Extracurricular 1': {
+        'id': 'extracurricular1',
+        'text': "You chat with your group about your extracurricular activities. One person mentions being a part of a club where you duel with medieval European swords. You had no idea such a thing existed at this school, but you suddenly really want to join it.",
+        'choices': [
+            { 'text': 'Next', 'next': 'askToHangOut' },
+        ]
+    },
+    'Phone 1': {
+        'id': 'phone1',
+        'text': "You don't feel like participating in class today, so you decide to just scroll on your phone while your groupmates talk to each other. Once class is over, you decide to go back to your dorm.",
+        'choices': [
+            { 'text': 'Next', 'next': 'askToHangOut' },
+        ]
+    },
+    'Home 1': {
+        'id': 'home1',
+        'text': "It wasn't very eventful, but you're done with class for the day. You can spend the rest of the day however you please.",
+        'backgroundImage': 'bedroom.jpg',
+        'choices': [
+            { 'text': 'Work on assignments', 'next': 'assignments' },
+            { 'text': 'Play games', 'next': 'games' },
+        ]
+    },
+    'assignments': {
+        'id': 'assignments',
+        'text': "You decide to get a head start on some assignments due in the coming week. After a couple of hours, you start to get sleepy and decide to go to bed.",
+        'backgroundImage': 'bedroom.jpg',
+        'choices': [
+            { 'text': 'Good Student ending', 'next': 'assignments' },
+        ]
+    },
+    'games': {
+        'id': 'games',
+        'text': "Even though you have assignments due very soon, you decide to spend the rest of the day playing video games with some online friends. By the time you remember you have an assignment due by the end of the day, it's already too late. Taking the loss, you decide to just go to sleep.",
+        'backgroundImage': 'bedroom.jpg',
+        'choices': [
+            { 'text': 'Mediocre Student ending', 'next': 'games' },
+        ]
+    },
+    'Asked to hang out': {
+        'id': 'askToHangOut',
+        'text': "After your discussion, your groupmates ask you if you want to hang out after class. You haven't talked with them much before, but it could be a good opportunity to make some new friends.",
+        'choices': [
+            { 'text': 'Hang out', 'next': 'hangOut' },
+            { 'text': 'Go home', 'next': 'goHome' },
         ]
     },
 
