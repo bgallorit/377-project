@@ -5,7 +5,6 @@ let data = {
         'choices': [
             { 'text': 'Get up', 'next': 'wakeUp' },
             { 'text': 'Snooze', 'next': 'snooze1' },
-            { 'text': 'Relationship stuff', 'next': 'relationship1' }
         ]
     },
     'Get up': {
@@ -158,9 +157,7 @@ let data = {
         'id': 'chatGpt1',
         'text': 'You use ChatGPT to help you solve the practice problems. Unfortunately, you fail to notice your professor patrolling the room and he catches you in the act. Even though you can tell he is very unhappy with you, he says nothing to you and class ends like normal.',
         'choices': [
-            { 'text': 'The TA', 'next': 'ta1' },
-            { 'text': 'The Professor', 'next': 'professor1' },
-            { 'text': 'A classmate', 'next': 'classmate' },
+            { 'text': 'Next', 'next': 'interrogation1' },
         ]
     },
 
@@ -170,7 +167,7 @@ let data = {
         'text': "The rest of the day goes by like normal, and after finishing up some assignments, you get to bed. You're free tomorrow morning, so you can sleep in.",
         'backgroundImage': 'bedroom.jpg',
         'choices': [
-            { 'text': 'Go to sleep', 'next': 'interrogation' },
+            { 'text': 'Go to sleep', 'next': 'interrogation2' },
         ]
     },
     'Interrogation 2': {
@@ -178,7 +175,7 @@ let data = {
         'text': "*KNOCK* *KNOCK* *KNOCK*\n...huh? You've been woken up in the middle of the night by someone knocking at the door. Very loudly, in fact.",
         'backgroundImage': 'black',
         'choices': [
-            { 'text': 'Answer the door', 'next': 'interrogation' },
+            { 'text': 'Answer the door', 'next': 'interrogation3' },
         ]
     },
     'Interrogation 3': {
@@ -186,7 +183,23 @@ let data = {
         'text': 'You scramble to put something on and open the door. Standing in front of you are two very not-college-aged men in black suits.',
         'backgroundImage': 'bedroom.jpg',
         'choices': [
-            { 'text': 'Answer the door', 'next': 'interrogation' },
+            { 'text': 'Next', 'next': 'interrogation4' },
+        ]
+    },
+    'Interrogation 4': {
+        'id': 'interrogation4',
+        'text': '"We know you used ChatGPT on your classwork today. You’re coming with us."\n...what?',
+        'backgroundImage': 'bedroom.jpg',
+        'choices': [ 
+            { 'text': 'Answer the door', 'next': 'interrogation5' },
+        ]
+    },
+    'Interrogation 5': {
+        'id': 'interrogation5',
+        'text': "Before you can respond, they drag you outside to a van armed with security guards. After shoving you in, they speed away.\nYou don't know where you're headed, but you feel you won't be back for a long time...",
+        'backgroundImage': 'bedroom.jpg',
+        'choices': [ 
+            { 'text': 'Cheating Ending', 'next': 'interrogation' },
         ]
     },
     'Classmate1': {
@@ -348,7 +361,8 @@ let data = {
     'AcceptMarriage': {
         'id': 'accept1',
         'text': '"Yes! Of course!", you say. You cry tears of joy and he pulls you in for a kiss.\nEveryone around you starts clapping. This is the happiest day of your life. A horse appears and carries the both of you into the sunset, which also doubles as his house he bought for both of you with his enormous wealth. How sweet of him to think of you like that!',
-        'spriteImage': 'kissing.png',
+        'backgroundImage': 'kissing.png',
+        'spriteImage': 'none',
         'choices': [
             { 'text': 'Next', 'next': 'accept2' },
         ]
