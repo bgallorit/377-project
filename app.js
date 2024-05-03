@@ -3,7 +3,7 @@ let data = {
         'id': 'initid',
         'text': 'You can hear your alarm blaring. It takes you a moment, but you remember that you set your alarm for 8:30. You have to be in class in an hour.',
         'choices': [
-            { 'text': 'Get up', 'next': 'wakeup' },
+            { 'text': 'Get up', 'next': 'wakeUp' },
             { 'text': 'Snooze', 'next': 'snooze1' },
             { 'text': 'Relationship stuff', 'next': 'relationship1' }
         ]
@@ -19,12 +19,20 @@ let data = {
     },
     'shower': {
         'id': 'shower',
-        'text': 'After taking a shower, you make your way to class.'
+        'text': 'After taking a shower, you make your way to class. It seems like today will be focused on solving practice problems.',
+        'backgroundImage': 'classroom.jpg',
+        'choices': [
+            {'text': 'Take a look at the problems', 'next': 'help1'}
+        ]
         
     },
     'skip': {
         'id': 'noShower',
-        'text': "You decide it's probably fine to skip the shower... hopefully..."
+        'text': "You decide it's probably fine to skip the shower... probably. You make your way to your first class.\nAs you sit down, you notice other students moving their chairs a little bit. There are practice problems on the board.",
+        'backgroundImage': 'classroom.jpg',
+        'choices': [
+            {'text': 'Take a look at the problems', 'next': 'help1'}
+        ]
     },
     'Snooze1': {
         'id': 'snooze1',
@@ -119,14 +127,100 @@ let data = {
             { 'text': 'Skip the shower', 'next': 'noShower' }
         ]
     },
+    'askForHelp': {
+        'id': 'help1',
+        'text': 'You try to solve the first question, but you find yourself completely stuck. You should probably ask someone for help, but who?',
+        'choices': [
+            { 'text': 'The TA', 'next': 'ta1' },
+            { 'text': 'The Professor', 'next': 'professor1' },
+            { 'text': 'A classmate', 'next': 'classmate1' },
+        ]
+    },
+    'TA': {
+        'id': 'ta1',
+        'text': "You ask the TA for help with the first question. They're a little busy helping another student, and tell you to just use ChatGPT 'or something.' Should you take their advice?",
+        'choices': [
+            { 'text': 'Use ChatGPT', 'next': 'chatGpt' + Math.floor(Math.random() * 2) },
+            { 'text': 'Ask the professor', 'next': 'professor1' },
+            { 'text': 'Ask a classmate', 'next': 'classmate' },
+        ]
+    },
+    'ChatGPT success': {
+        'id': 'chatGpt0',
+        'text': 'You use ChatGPT to help you solve the practice problems and nobody seems to notice. You feel like you have a better grasp of the material!',
+        'choices': [
+            { 'text': 'The TA', 'next': 'ta1' },
+            { 'text': 'The Professor', 'next': 'professor1' },
+            { 'text': 'A classmate', 'next': 'classmate' },
+        ]
+    },
+    'ChatGPT fail': {
+        'id': 'chatGpt1',
+        'text': 'You use ChatGPT to help you solve the practice problems. Unfortunately, you fail to notice your professor patrolling the room and he catches you in the act. Even though you can tell he is very unhappy with you, he says nothing to you and class ends like normal.',
+        'choices': [
+            { 'text': 'The TA', 'next': 'ta1' },
+            { 'text': 'The Professor', 'next': 'professor1' },
+            { 'text': 'A classmate', 'next': 'classmate' },
+        ]
+    },
+
+    ///INTERROGATION
+    'Interrogation 1': {
+        'id': 'interrogation1',
+        'text': "The rest of the day goes by like normal, and after finishing up some assignments, you get to bed. You're free tomorrow morning, so you can sleep in.",
+        'backgroundImage': 'bedroom.jpg',
+        'choices': [
+            { 'text': 'Go to sleep', 'next': 'interrogation' },
+        ]
+    },
+    'Interrogation 2': {
+        'id': 'interrogation2',
+        'text': "*KNOCK* *KNOCK* *KNOCK*\n...huh? You've been woken up in the middle of the night by someone knocking at the door. Very loudly, in fact.",
+        'backgroundImage': 'black',
+        'choices': [
+            { 'text': 'Answer the door', 'next': 'interrogation' },
+        ]
+    },
+    'Interrogation 3': {
+        'id': 'interrogation3',
+        'text': 'You scramble to put something on and open the door. Standing in front of you are two very not-college-aged men in black suits.',
+        'backgroundImage': 'bedroom.jpg',
+        'choices': [
+            { 'text': 'Answer the door', 'next': 'interrogation' },
+        ]
+    },
+    'Classmate1': {
+        'id': 'classmate1',
+        'text': "You ask a classmate you know for help. You go through the practice problems together, and before you know it, class is over. You decide to get lunch together.",
+        'choices': [
+            { 'text': 'Next', 'next': 'classmate2' },
+        ]
+    },
+    'Classmate2': {
+        'id': 'classmate2',
+        'text': "You've both gotten your food and have just sat down. What should you talk about?",
+        'backgroundImage': 'gracies.jpg',
+        'choices': [
+            { 'text': 'Weather', 'next': 'nonsense1' },
+            { 'text': 'Relationships', 'next': 'relationship1' },
+            { 'text': 'Weeb stuff', 'next': 'weeb1' },
+        ]
+    },
     'Relationship stuff': {
         'id': 'relationship1',
-        'text': "The conversation with your friend shifts to your relationship statuses. Just as you declare that you’re single, you feel a sharp presence nearby. Weird. Definitely means nothing. You shouldn't read into it. Presence? That's silly.\nYou and your friend leave the dining area and you both part ways. You catch a glimpse of someone you recognize. Or maybe not. This is such a huge school so maybe it’s someone you just think looks like someone you know.",
+        'text': "The conversation with your friend shifts to your relationship statuses. Just as you declare that you’re single, you feel a sharp presence nearby. Weird. Definitely means nothing. You shouldn't read into it. Presence? That's silly.",
+        'choices': [
+            { 'text': 'Next', 'next': 'relationship2' },
+        ]
+    },
+    'Relationship2': {
+        'id': 'relationship2',
+        'text': "You and your friend leave the dining area and you both part ways. You catch a glimpse of someone you recognize. Or maybe not. This is such a huge school so maybe it’s someone you just think looks like someone you know.",
+        'backgroundImage': 'hallway.jpg',
         'choices': [
             { 'text': 'Ignore', 'next': 'ignore1' },
             { 'text': 'Say hi', 'next': 'sayHi' }
         ]
-    // Add more choices as needed
     },
     'Ignore1': {
         'id': 'ignore1',
@@ -138,7 +232,7 @@ let data = {
     },
     'Ignore again': {
         'id': 'ignore2',
-        'text': 'Suddenly, the presence sharply grows behind you and ends up in front of your face.</br>"H-hey. Wow what a coincidence seeing you here. I know you from c-class… right?"',
+        'text': 'Suddenly, the presence sharply grows behind you and ends up in front of your face.\n"H-hey. Wow what a coincidence seeing you here. I know you from c-class… right?"',
         'spriteImage': 'guy.png',
         'choices': [
             { 'text': 'Do I?', 'next': 'doI' }
@@ -185,10 +279,10 @@ let data = {
     },
     'Sure': {
         'id': 'accept',
-        'text': 'You’re captivated by his offer and feel all tingly at the fact that he wants to pay for all of it. You get the feeling that he can treat you like a queen on this little outing. He also mentioned that you can eat as much as you want? There’s nobody in the world more generous or gentlemanly than this Guy. You accept his offer as you’re quivering with excitement at being able to be alone with such a valuable man',
+        'text': 'You’re captivated by his offer and feel all tingly at the fact that he wants to pay for all of it. You get the feeling that he can treat you like a queen on this little outing. He also mentioned that you can eat as much as you want? There’s nobody in the world more generous or gentlemanly than this Guy. You accept his offer as you’re quivering with excitement at being able to be alone with such a valuable man.',
         // 'spriteImage': 'guyCry.png',
         'choices': [
-            { 'text': 'Later that day...', 'next': 'later' },
+            { 'text': 'Later that day...', 'next': 'later1' },
         ]
     },
     'Give in': {
@@ -196,12 +290,23 @@ let data = {
         'text': 'You know what? On second thought the way he insulted you and called you a big fat meanie jerkface who kisses a lot of boys for attention was kind of hot. Maybe this is the kind of man you need in your life. His words really spoke to you. Plus that little bit at the end? Oh man, you think about how awful it would be to miss out on the opportunity to go to the fanciest place on campus with this guy and for some other person to take that from you. His confidence and charisma could easily land him a boat of people to make kissy faces with if he’s not careful.',
         'spriteImage': 'none',
         'choices': [
-            { 'text': 'Later that day...', 'next': 'later' }
+            { 'text': 'Later that day...', 'next': 'later1' }
         ]
     },
     'Later that day...': {
-        'id': 'later',
-        'text': 'Later that day, Guy shows up to your dorm, grabs your hand, and kisses it. Wow! He didn’t even need to ask where you were living. He could just sense the force of your deep connection together and followed its energy to where you are. He’s so amazing…\nGuy leads you gently to your destination with his hands over your eyes and once he grants you the permission to look, you realize your excitement was not for nothing.',
+        'id': 'later1',
+        'text': 'Later that day, Guy shows up to your dorm, grabs your hand, and kisses it. Wow! He didn’t even need to ask where you were living. He could just sense the force of your deep connection together and followed its energy to where you are. He’s so amazing…',
+        'backgroundImage': 'bedroom.jpg',
+        'spriteImage': 'guy.png',
+        'choices': [
+            { 'text': 'Next', 'next': 'later2' }
+        ]
+    },
+    'Later2': {
+        'id': 'later2',
+        'text': 'Guy leads you gently to your destination with his hands over your eyes and once he grants you the permission to look, you realize your excitement was not for nothing.',
+        'spriteImage': 'none',
+        'backgroundImage': 'black',
         'choices': [
             { 'text': 'Next', 'next': 'gracies' }
         ]
@@ -379,13 +484,11 @@ let data = {
     'RunAway7': {
         'id': 'runAway7',
         'text': 'Oh. Looks like campus safety got to him.',
-        // 'spriteImage': 'guyCry.png',
         'choices': [
             { 'text': 'Run Away Ending', 'next': 'runAway7' },
         ]
-    },
-
-    
+    }
+   
 }
 
 let grade = 0;
@@ -394,6 +497,11 @@ let imageCreated = false;;
 let values = Object.values(data);
 
 function changeBackgroundImage(image){
+    if(image == 'black'){
+        document.body.style.backgroundImage = "none";
+        document.body.style.backgroundColor = "black";
+        return;
+    }
     let imageRef = "assets/img/" + image;
     document.body.style.backgroundImage = "url(" + imageRef + ")";
     console.log(imageRef);
