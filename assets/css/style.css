@@ -50,6 +50,7 @@ button {
 }
 
 #sprite-div {
+    margin-top: 10vh;
     width: 100%;
     display: flex;
     justify-content: center;

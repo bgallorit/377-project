@@ -210,6 +210,7 @@ let data = {
         'id': 'gracies',
         'text': 'Guy brought you to the famed Grace Watson Hall for tonight’s dining experience. It’s like a dream come true.\n“Table for two, please. Haha, don’t worry, I can pay ahead.”\nHe swipes his card and you both find your seating. With such expensive prices, you begin to wonder how he’s able to afford something this high class. You decide to ask.',
         'spriteImage': 'guy.png',
+        'backgroundImage': 'gracies.jpg',
         'choices': [
             { 'text': '"How can you afford this?"', 'next': 'affordQuestion' }
         ]
@@ -274,6 +275,7 @@ let data = {
         'id': 'reject2',
         'text': '“So instead of replying, you ran away and ghosted me. Of course you wouldn’t appreciate what I’ve done for you because you’re all the same. NO MORE MISTER NICE GUY! AWOOOOOOOO! GRRRRRRR”\nHe started… growling? What did you get yourself into? You look for escape routes. Can you crawl under the stall? No, that would be too slow. Think, think thi-',
         'spriteImage': 'none',
+        'backgroundImage': 'bathroom.jpg',
         'choices': [
             { 'text': 'Next', 'next': 'reject3' },
         ]
@@ -295,8 +297,9 @@ let data = {
     },
     'RejectMarriage5': {
         'id': 'reject5',
-        'text': "After a while waiting, you decide to go back to your room hoping he gave up. He doesn’t seem to be there luckily. You open the door.\nSomething is on your bed. It's a note.",
+        'text': "After waiting a while, you decide to go back to your room hoping he gave up. He doesn’t seem to be there luckily. You open the door.\nSomething is on your bed. It's a note.",
         'spriteImage': 'none',
+        'backgroundImage': 'bedroom.jpg',
         'choices': [
             { 'text': 'Read the note', 'next': 'reject6' },
         ]
@@ -461,6 +464,7 @@ function init() {
         document.getElementById('img').parentNode.removeChild(document.getElementById('img'));
     }
     imageCreated = false;
+    document.body.style.backgroundImage = 'none';
     document.body.style.backgroundColor = "black";
     document.getElementById('choices').innerHTML = '';
     document.getElementById('textbox').innerText = data.init.text;
