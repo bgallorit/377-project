@@ -124,7 +124,7 @@ let data = {
         'text': "The conversation with your friend shifts to your relationship statuses. Just as you declare that you’re single, you feel a sharp presence nearby. Weird. Definitely means nothing. You shouldn't read into it. Presence? That's silly.\nYou and your friend leave the dining area and you both part ways. You catch a glimpse of someone you recognize. Or maybe not. This is such a huge school so maybe it’s someone you just think looks like someone you know.",
         'choices': [
             { 'text': 'Ignore', 'next': 'ignore1' },
-            { 'text': 'Say hi', 'next': 'sayhi' }
+            { 'text': 'Say hi', 'next': 'sayHi' }
         ]
     // Add more choices as needed
     },
@@ -133,19 +133,21 @@ let data = {
         'text': 'As you keep walking, you continue to feel that presence. Something is watching you. You probably know what it is at this point. But you could keep ignoring it if you really want to…',
         'choices': [
             { 'text': 'Ignore again', 'next': 'ignore2' },
-            { 'text': 'Say hi', 'next': 'Say hi' }
+            { 'text': 'Say hi', 'next': 'sayHi' }
         ]
     },
     'Ignore again': {
         'id': 'ignore2',
         'text': 'Suddenly, the presence sharply grows behind you and ends up in front of your face.</br>"H-hey. Wow what a coincidence seeing you here. I know you from c-class… right?"',
+        'spriteImage': 'guy.png',
         'choices': [
             { 'text': 'Do I?', 'next': 'doI' }
         ]
     },
     'Say hi': {
-        'id': 'sayhi',
+        'id': 'sayHi',
         'text': '“H-hey. Wow what a coincidence seeing you here. I know you from c-class… right?”',
+        'spriteImage': 'guy.png',
         'choices': [
             { 'text': 'Do I?', 'next': 'doI' }
         ]
@@ -175,23 +177,26 @@ let data = {
     '"No thanks."': {
         'id': 'pass',
         'text': '“OH so NOW you think you’re too GOOD for me?? Even after all the time we spent together strengthening our bond over that group project and how I even OFFERED TO SPEND MY OWN MONEY FOR YOU??? MAYBE YOU’RE JUST A [meanie jerkface] WHO [makes kissy faces at a lot of boys] BECAUSE YOU LOOOOVE THE ATTENTION FROM LEADING PEOPLE ON YOU DUMB FAT [person who seeks attention]! I’LL HAVE YOU KNOW I HAVE SOOOOOO MANY OTHER [people] I COULD BE [making kissy kissy with] SO I DON’T NEED YOU ANYWAYS!',
+        'spriteImage': 'guyCry.png',
         'choices': [
             { 'text': 'Give in', 'next': 'giveIn' },
-            { 'text': 'Run away', 'next': 'runAway' }
+            { 'text': 'Run away', 'next': 'runAway1' }
+        ]
+    },
+    'Sure': {
+        'id': 'accept',
+        'text': 'You’re captivated by his offer and feel all tingly at the fact that he wants to pay for all of it. You get the feeling that he can treat you like a queen on this little outing. He also mentioned that you can eat as much as you want? There’s nobody in the world more generous or gentlemanly than this Guy. You accept his offer as you’re quivering with excitement at being able to be alone with such a valuable man',
+        // 'spriteImage': 'guyCry.png',
+        'choices': [
+            { 'text': 'Later that day...', 'next': 'later' },
         ]
     },
     'Give in': {
         'id': 'giveIn',
         'text': 'You know what? On second thought the way he insulted you and called you a big fat meanie jerkface who kisses a lot of boys for attention was kind of hot. Maybe this is the kind of man you need in your life. His words really spoke to you. Plus that little bit at the end? Oh man, you think about how awful it would be to miss out on the opportunity to go to the fanciest place on campus with this guy and for some other person to take that from you. His confidence and charisma could easily land him a boat of people to make kissy faces with if he’s not careful.',
+        'spriteImage': 'none',
         'choices': [
             { 'text': 'Later that day...', 'next': 'later' }
-        ]
-    },
-    'Run away': {
-        'id': 'runAway',
-        'text': 'You quickly make an excuse and leave, avoiding any further interaction with Guy.',
-        'choices': [
-            { 'text': 'Continue running away', 'next': 'Continue running away' }
         ]
     },
     'Later that day...': {
@@ -204,6 +209,7 @@ let data = {
     'Gracies': {
         'id': 'gracies',
         'text': 'Guy brought you to the famed Grace Watson Hall for tonight’s dining experience. It’s like a dream come true.\n“Table for two, please. Haha, don’t worry, I can pay ahead.”\nHe swipes his card and you both find your seating. With such expensive prices, you begin to wonder how he’s able to afford something this high class. You decide to ask.',
+        'spriteImage': 'guy.png',
         'choices': [
             { 'text': '"How can you afford this?"', 'next': 'affordQuestion' }
         ]
@@ -217,7 +223,8 @@ let data = {
     },
     'Eyes': {
         'id': 'eyeZoom',
-        'text': 'Guy stares into your eyes.</br>"I’m sure you’re different." He pulls out a box with a ring and presents it to you.',
+        'text': 'Guy stares into your eyes.\n"I’m sure you’re different." He pulls out a box with a ring and presents it to you.',
+        'spriteImage': 'guyClose.png',
         'choices': [
             { 'text': 'Next', 'next': 'proposal' }
         ]
@@ -235,6 +242,7 @@ let data = {
     'AcceptMarriage': {
         'id': 'accept1',
         'text': '"Yes! Of course!", you say. You cry tears of joy and he pulls you in for a kiss.\nEveryone around you starts clapping. This is the happiest day of your life. A horse appears and carries the both of you into the sunset, which also doubles as his house he bought for both of you with his enormous wealth. How sweet of him to think of you like that!',
+        'spriteImage': 'kissing.png',
         'choices': [
             { 'text': 'Next', 'next': 'accept2' },
         ]
@@ -265,6 +273,7 @@ let data = {
     'RejectMarriage2': {
         'id': 'reject2',
         'text': '“So instead of replying, you ran away and ghosted me. Of course you wouldn’t appreciate what I’ve done for you because you’re all the same. NO MORE MISTER NICE GUY! AWOOOOOOOO! GRRRRRRR”\nHe started… growling? What did you get yourself into? You look for escape routes. Can you crawl under the stall? No, that would be too slow. Think, think thi-',
+        'spriteImage': 'none',
         'choices': [
             { 'text': 'Next', 'next': 'reject3' },
         ]
@@ -272,6 +281,7 @@ let data = {
     'RejectMarriage3': {
         'id': 'reject3',
         'text': 'He opens the door before you can do anything else and pushes you down against the toilet seat. Gross.\n“WE WERE HAVING SUCH A GREAT NIGHT! WHY DID YOU HAVE TO RUIN IT?? ALL YOU HAVE TO DO IS BE WITH ME AND I CAN BE HAPPY FOR THE REST OF MY LIFE!”',
+        'spriteImage': 'guyEyes.png',
         'choices': [
             { 'text': 'Next', 'next': 'reject4' },
         ]
@@ -283,12 +293,101 @@ let data = {
             { 'text': 'Next', 'next': 'reject5' },
         ]
     },
+    'RejectMarriage5': {
+        'id': 'reject5',
+        'text': "After a while waiting, you decide to go back to your room hoping he gave up. He doesn’t seem to be there luckily. You open the door.\nSomething is on your bed. It's a note.",
+        'spriteImage': 'none',
+        'choices': [
+            { 'text': 'Read the note', 'next': 'reject6' },
+        ]
+    },
+    'RejectMarriage6': {
+        'id': 'reject6',
+        'text': '“pls forgive me i got too heated. ill even forgive u for dunking my face in barf and we can be happy. lets go on one more date i promise it will never happen again.”\nYou’re way too tired to try processing any of this and just collapse into bed.',
+        'choices': [
+            { 'text': '...', 'next': 'reject7' },
+        ]
+    },
+    'RejectMarriage7': {
+        'id': 'reject7',
+        'text': "When you wake up, you hear a knock on your door. Ugh. You know where this is going.",
+        'choices': [
+            { 'text': 'Open the door', 'next': 'reject8' },
+        ]
+    },
+    'RejectMarriage8': {
+        'id': 'reject8',
+        'text': '"S-so you’ll forgive me, right?\n...How do you apply for a restraining order?',
+        'spriteImage': 'guyEyes.png',
+        'choices': [
+            { 'text': 'Restraining Order Ending', 'next': 'reject8' },
+        ]
+    },
+
+    //RUNNING AWAY
+    'RunAway1': {
+        'id': 'runAway1',
+        'text': 'You decide to ask for his phone number and tell him you’ll text him later so that you can plan things out. After typing it in your phone and then deleting it, you high tail it back to your dorm and consider dropping out of the class you’re with him in. The next day you get a mysterious text.',
+        // 'spriteImage': 'guyEyes.png',
+        'choices': [
+            { 'text': 'Read text', 'next': 'runAway2' },
+        ]
+    },
+    'RunAway2': {
+        'id': 'runAway2',
+        'text': '"hey"\nYou don’t know the number so you block it. You then hear a knock on the door.',
+        'spriteImage': 'none',
+        'choices': [
+            { 'text': 'Open the door', 'next': 'runAway3' },
+        ]
+    },
+    'RunAway3': {
+        'id': 'runAway3',
+        'text': '“I-It doesn’t seem like… you answered… yet. I’m sorry for my… um… outburst at you. I’m actually really nice if you can give me a ch-chance. S-soooo…”\nHe starts loudly sobbing and you have several questions. You text the mystery number and his phone makes a notification noise out of his pocket. Uh oh.\nYou don’t know what to do other than close the door to come up with time to think.',
+        'spriteImage': 'guyCry.png',
+        'choices': [
+            { 'text': 'Open the door', 'next': 'runAway4' },
+        ]
+    },
+    'RunAway4': {
+        'id': 'runAway4',
+        'text': '“HUH? YOU DON’T EVEN LIKE MEN WHO ARE VULNERABLE WITH THEIR FEELINGS? WHAT ARE YOU, SOME KIND OF ROBOT??? WHAT DO I NEED TO DO TO IMPRESS YOU?”\nYou hear some jingling outside the door and it seems like the door knob is… being messed with. You open the window as you see it turn and jump out of it. You run without looking back. Actually maybe one peek wouldn’t hurt. Don’t worry, he isn’t following you.',
+        'spriteImage': 'none',
+        'choices': [
+            { 'text': 'Look behind you', 'next': 'runAway5' },
+        ]
+    },
+    'RunAway5': {
+        'id': 'runAway5',
+        'text': 'Oh. He is.\nWhy are you even running? You can’t think of anywhere to go. ',
+        'spriteImage': 'guyCry.png',
+        'choices': [
+            { 'text': 'Look behind you', 'next': 'runAway6' },
+        ]
+    },
+    'RunAway6': {
+        'id': 'runAway6',
+        'text': '“YOU STUPID LITTLE UGLY TRICKSTER! ABSOLUTE BUTTFACE ICKY TURD CRETIN HORSE! WHEN I GET YOU YOU’LL UNDERSTAND WHAT YOU’VE BEEN MISSING OUT ON ALL THIS TIME! I’LL-”',
+        // 'spriteImage': 'guyCry.png',
+        'choices': [
+            { 'text': 'Is that...', 'next': 'runAway7' },
+        ]
+    },
+    'RunAway7': {
+        'id': 'runAway7',
+        'text': 'Oh. Looks like campus safety got to him.',
+        // 'spriteImage': 'guyCry.png',
+        'choices': [
+            { 'text': 'Run Away Ending', 'next': 'runAway7' },
+        ]
+    },
 
     
 }
 
 let grade = 0;
 let social = 0;
+let imageCreated = false;;
 let values = Object.values(data);
 
 function changeBackgroundImage(image){
@@ -296,7 +395,22 @@ function changeBackgroundImage(image){
     document.body.style.backgroundImage = "url(" + imageRef + ")";
     console.log(imageRef);
 }
- 
+
+function changeSpriteImage(image) {
+    if(imageCreated){
+        document.getElementById('img').parentNode.removeChild(document.getElementById('img'));
+    }
+    if(image == 'none'){
+        imageCreated = false;
+        return;
+    }
+    let imageRef = "assets/img/" + image;
+    let img = document.createElement('img');
+    img.id = 'img';
+    img.src = imageRef;
+    document.getElementById('sprite-div').append(img);
+    imageCreated = true;
+}
 
 //Takes the choice made and edits the buttons/text on screen to match the data
 function changeText(choiceId) {
@@ -309,8 +423,14 @@ function changeText(choiceId) {
             break;
         }
     }
+    if(choiceId == 'initid') {
+        changeSpriteImage('none');
+    }
     if(scenario.backgroundImage) {
         changeBackgroundImage(scenario.backgroundImage);
+    }
+    if(scenario.spriteImage) {
+        changeSpriteImage(scenario.spriteImage);
     }
 
     // Clear current buttons
@@ -337,6 +457,10 @@ function changeText(choiceId) {
 
 function init() {
     // Initialize the game with initial text and buttons
+    if(imageCreated){
+        document.getElementById('img').parentNode.removeChild(document.getElementById('img'));
+    }
+    imageCreated = false;
     document.body.style.backgroundColor = "black";
     document.getElementById('choices').innerHTML = '';
     document.getElementById('textbox').innerText = data.init.text;
