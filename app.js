@@ -170,6 +170,7 @@ let data = {
     'Next class 1': {
         'id': 'nextClass1',
         'text': "Once you arrived at your second class, the professor split everyone into groups and initiated group discussions. The professor isn't really paying attention, so you can do whatever you want.",
+        'backgroundImage': 'classroom2.jpg',
         'choices': [
             { 'text': 'Talk about class topic', 'next': 'topic1' },
             { 'text': 'Talk about extracurriculars', 'next': 'extracurricular1' },
@@ -194,11 +195,11 @@ let data = {
         'id': 'phone1',
         'text': "You don't feel like participating in class today, so you decide to just scroll on your phone while your groupmates talk to each other. Once class is over, you decide to go back to your dorm.",
         'choices': [
-            { 'text': 'Next', 'next': 'askToHangOut' },
+            { 'text': 'Next', 'next': 'home' },
         ]
     },
     'Home 1': {
-        'id': 'home1',
+        'id': 'home',
         'text': "It wasn't very eventful, but you're done with class for the day. You can spend the rest of the day however you please.",
         'backgroundImage': 'bedroom.jpg',
         'choices': [
@@ -227,7 +228,45 @@ let data = {
         'text': "After your discussion, your groupmates ask you if you want to hang out after class. You haven't talked with them much before, but it could be a good opportunity to make some new friends.",
         'choices': [
             { 'text': 'Hang out', 'next': 'hangOut' },
-            { 'text': 'Go home', 'next': 'goHome' },
+            { 'text': 'Go home', 'next': 'home' },
+        ]
+    },
+    'hang out': {
+        'id': 'hangOut',
+        'text': "You walk around campus with your groupmates. The topic eventually shifts to movies, and you're asked what your favorite movie is.",
+        'backgroundImage': 'campus.jpg',
+        'choices': [
+            { 'text': 'An arthouse classic', 'next': 'arthouse' },
+            { 'text': 'A childhood favorite', 'next': 'childhood' },
+            { 'text': 'A total meme', 'next': 'meme' },
+        ]
+    },
+    'Arthouse': {
+        'id': 'arthouse',
+        'text': "Being somewhat of a film buff, you respond with an arthouse film that you've loved since the first 12 times you've watched it. Surprisingly, one of your groupmates gets excited and starts talking about how much he likes the movie as well. You begin a conversation about the film's themes. This is great - it's the first time in a while you've been able to bond with someone over this!",
+        'choices': [
+            { 'text': 'Next', 'next': 'arthouse2' },
+        ]
+    },
+    'Arthouse end': {
+        'id': 'arthouse2',
+        'text': "You talk for so long that the sun begins to set. You and your groupmate exchange contact info and head home. As you go home, you can't help but have a smile on your face - you can't wait to talk with your new friend again.",
+        'choices': [
+            { 'text': 'New Friend ending', 'next': 'arthouse2' },
+        ]
+    },
+    'Childhood classic': {
+        'id': 'childhood',
+        'text': "Drawing a blank, you respond with a movie from your childhood you must've seen over 20 times by now. Your groupmates mention other movies from their childhoods, and you bond over the fond memories. Agreeing to hang out again after next class, you all head home before dark.",
+        'choices': [
+            { 'text': 'Friend Group ending', 'next': 'childhood' },
+        ]
+    },
+    'Total meme': {
+        'id': 'meme',
+        'text': "Being the total jokester you are, you respond with a movie that was a viral meme on the internet a few years ago. Your groupmates each give you a weird look, as if you've made them uncomfortable. You don't think they get the joke. The conversation slowly dies out and you each go your separate ways. You head home, never wanting to watch a movie ever again.",
+        'choices': [
+            { 'text': 'Awkward ending', 'next': 'meme' },
         ]
     },
 
@@ -250,8 +289,9 @@ let data = {
     },
     'Interrogation 3': {
         'id': 'interrogation3',
-        'text': 'You scramble to put something on and open the door. Standing in front of you are two very not-college-aged men in black suits.',
+        'text': 'You scramble to put something on and open the door. Standing in front of you is a very not-college-aged man in a black suit.',
         'backgroundImage': 'bedroom.jpg',
+        'spriteImage': 'agent.png',
         'choices': [
             { 'text': 'Next', 'next': 'interrogation4' },
         ]
@@ -259,15 +299,14 @@ let data = {
     'Interrogation 4': {
         'id': 'interrogation4',
         'text': '"We know you used ChatGPT on your classwork today. You’re coming with us."\n...what?',
-        'backgroundImage': 'bedroom.jpg',
         'choices': [ 
             { 'text': 'Answer the door', 'next': 'interrogation5' },
         ]
     },
     'Interrogation 5': {
         'id': 'interrogation5',
-        'text': "Before you can respond, they drag you outside to a van armed with security guards. After shoving you in, they speed away.\nYou don't know where you're headed, but you feel you won't be back for a long time...",
-        'backgroundImage': 'bedroom.jpg',
+        'text': "Before you can respond, he drags you outside to a van armed with security guards. After shoving you in, they speed away.\nYou don't know where you're headed, but you feel you won't be back for a long time...",
+        'backgroundImage': 'parking.jpg',
         'choices': [ 
             { 'text': 'Cheating Ending', 'next': 'interrogation' },
         ]
@@ -286,7 +325,14 @@ let data = {
         'choices': [
             { 'text': 'Weather', 'next': 'nonsense1' },
             { 'text': 'Relationships', 'next': 'relationship1' },
-            { 'text': 'Weeb stuff', 'next': 'weeb1' },
+        ]
+    },
+    'Nonsense 1': {
+        'id': 'nonsense1',
+        'text': "You strike up a conversation about the weather. It lasts about ten seconds. You're not sure why, but you really want to ask them about how their relationship is going.",
+        'backgroundImage': 'gracies.jpg',
+        'choices': [
+            { 'text': 'Relationships', 'next': 'relationship1' },
         ]
     },
     'Relationship stuff': {
