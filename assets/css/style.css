@@ -1,13 +1,18 @@
 html {
-    font-family: "Cabin", sans-serif;
-    
+    font-family: "Cabin", sans-serif; 
+}
+
+body {
+    background-size: cover;
 }
 
 button {
+    color: white;
+    font-family: "Cabin", sans-serif; 
     font-size: 1.5em;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .6);
     border-radius: .5em;
     /* margin-left: 3em;
     margin-right: 3em; */
@@ -20,17 +25,26 @@ button {
     font-size: 2em;
 }
 
+#textbox-style {
+    display: flex;
+    justify-content: center;
+}
+
 #textbox-div {
+    width: 80%;
+    position: absolute;
     font-size: 1.75em;
+    font-size: 1.5vw;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .6);
     border-radius: 1em;
+    top: 70%;
     height: 20vh;
 }
 
 #textbox-div > p {
-    margin: 2%;
+    margin: 1%;
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
